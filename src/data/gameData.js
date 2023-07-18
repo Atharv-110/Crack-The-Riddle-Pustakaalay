@@ -1,21 +1,33 @@
 const gameData = [
   {
     question:
-      "I am a fruit, round in shape and red in color. I can keep you away from doctors if you eat me every day. Guess who am I?",
-    hint: "lorem asd asd asd asd asd asd asd asdd asd asd asd",
-    answer: "question one",
+      "Question 1",
+    hint: "Hint 1",
+    answer: "one",
   },
   {
     question:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae sapiente saepe eaque sunt dignissimos nam!",
-    hint: "lorem asd asd asd asd asd asd asd asdd asd asd asd",
-    answer: "question two",
+      "Question 2",
+    hint: "Hint 2",
+    answer: "two",
   },
   {
     question:
-      "I am a fruit, round in shape and red in color. I can keep you away from doctors if you eat me every day. Guess who am I?",
-    hint: "lorem asd asd asd asd asd asd asd asdd asd asd asd",
-    answer: "question three",
+      "Question 3",
+    hint: "Hint 3",
+    answer: "three",
+  },
+  {
+    question:
+      "Question 4",
+    hint: "Hint 4",
+    answer: "four",
+  },
+  {
+    question:
+      "Question 5",
+    hint: "Hint 5",
+    answer: "five",
   },
 ];
 

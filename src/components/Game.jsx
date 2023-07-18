@@ -20,11 +20,15 @@ export default function Game() {
   const [userAnswer, setUserAnswer] = useState("");
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
   const [correctCount, setCorrectCount] = useState(0);
+  const [hintStyle, setHintStyle] = useState("riddle-hint");
+  const [hintClicked, setHintClicked] = useState(true);
+
 
   const handleAnswerChange = (event) => {
     setUserAnswer(event.target.value);
   };
 
+  // Check answer whether it is correct or not
   const checkAnswer = () => {
     const correctAnswer = gameData[currentQuestion].answer;
     const answerIsCorrect =
@@ -65,27 +69,37 @@ export default function Game() {
     }
   };
 
+  const showHint = () => {
+    if(hintClicked) {
+      console.log("show")
+      setHintStyle("riddle-hint-show")
+      setHintClicked(false)
+    } else {
+      console.log("hide")
+
+      setHintStyle("riddle-hint")
+      setHintClicked(true)
+    }
+  }
+
   if (currentQuestion >= gameData.length) {
     navigate("/summary");
-    return <div>Quiz completed!</div>;
+    return <></>;
   }
 
   const currentQuestionObj = gameData[currentQuestion];
 
   // Pause Function
   const handlePause = () => {
-    console.log("Pause");
+    // console.log("Pause");
     setPlaying(false);
     Swal.fire({
+      title: "Game Paused!",
+      iconHtml: '<i class="fa-solid fa-pause" style="color: #000000;"></i>',
       allowOutsideClick: false,
-      title: "Game Paused",
-      iconHtml:
-        '<i class="fa-solid fa-pause fa-fade" style="color: #000000;"></i>',
-      showCancelButton: true,
-      cancelButtonText: "Quit",
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
+      showDenyButton: true,
       confirmButtonText: "Resume",
+      denyButtonText: `Quit`,
     }).then((result) => {
       if (result.isConfirmed) {
         setPlaying(true);
@@ -136,14 +150,14 @@ export default function Game() {
       <div className="game-main">
         <div className="game-main-card">
           <div className="game-main-upper">
-            <h3 className="riddle-count">Riddle 1</h3>
+            <h3 className="riddle-count">Riddle <span>{currentQuestion+1}</span></h3>
             <h1 className="riddle-question">{currentQuestionObj.question}</h1>
           </div>
           <div className="game-main-lower">
-            <div className="riddle-hint">
+            <button className="hint-button" onClick={() => showHint()}><i className="fa-regular fa-lightbulb"></i></button>
+            <div className={hintStyle}>
               <p>{currentQuestionObj.hint}</p>
             </div>
-            <button className="hint-button"></button>
           </div>
         </div>
         <input

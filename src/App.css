@@ -1,10 +1,13 @@
 :root {
-  --primary-green: #DDFFE0;
-  --dark-green: #425F57;
-  --primary-yellow: #EFDD4B;
-  --primary-purple: #AB59FD;
-  --primary-white: #FFFEFA;
-  --box-shadow: -5px -28px 100px 0px #D8B1FF inset, 0px -13px 10px 0px #AB59FD inset, 20px 16px 10px 0px rgba(255, 249, 249, 0.30) inset, 11px 15px 15px 0px rgba(0, 0, 0, 0.25);;
+  --primary-green: #ddffe0;
+  --dark-green: #425f57;
+  --primary-yellow: #efdd4b;
+  --primary-purple: #ab59fd;
+  --primary-white: #fffefa;
+  --box-shadow: -5px -28px 100px 0px #d8b1ff inset,
+    0px -13px 10px 0px #ab59fd inset,
+    20px 16px 10px 0px rgba(255, 249, 249, 0.3) inset,
+    11px 15px 15px 0px rgba(0, 0, 0, 0.25);
   --transform-btn: scale(0.9);
   --transition-btn: 500ms all ease-in-out;
 }
@@ -172,7 +175,7 @@
 .level .level-box .radio-item input {
   appearance: none;
   /* border: 3px solid var(--dark-blue); */
-  background-color: #6C1FCE;
+  background-color: #6c1fce;
   width: 40px;
   height: 40px;
   border-radius: 17px;
@@ -249,19 +252,213 @@
 }
 
 .game-main {
-  margin-top: 2rem;
-  width: 90%;
-  /* height: 90%; */
+  margin-top: 3rem;
+  width: 80%;
+  height: 75%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.game-main-card {
+  width: 700px;
+  text-align: center;
+  padding: 2rem;
+  background: var(--primary-green);
+  border-radius: 2.5rem;
+}
+
+.riddle-count {
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-size: 0.999rem;
+}
+
+.riddle-question {
+  font-family: "Luckiest Guy", cursive;
+  color: var(--dark-green);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  padding: 1rem 2rem;
+}
+
+.game-main-lower {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.hint-button {
+  background: var(--dark-green);
+  cursor: pointer;
+  font-size: 1.8rem;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 20px;
+  z-index: 1;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  transition: var(--transition-btn);
+}
+
+.hint-button i {
+  color: var(--primary-green);
+}
+
+.hint-button:hover {
+  transform: var(--transform-btn);
+}
+
+.riddle-hint {
+  display: none;
+}
+
+.riddle-hint-show {
+  /* display: block; */
+  background: var(--primary-white);
+  box-shadow: -5px -28px 100px 0px #faf4e1 inset,
+    0px -13px 10px 0px #c8e4ff inset,
+    20px 16px 10px 0px rgba(255, 249, 249, 0.3) inset;
+  filter: drop-shadow(11px 15px 15px rgba(0, 0, 0, 0.15));
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  border: 1px solid var(--dark-green);
+  width: 600px;
+  letter-spacing: .6px;
+}
+
+.game-input {
+  background: #E5D0FF;
+  width: 450px;
+  border: none;
+  outline: none;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  color: #030303;
+  font-weight: 800;
+  text-transform: uppercase;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.game-input::placeholder {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.game-submit-btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 250px;
+  cursor: pointer;
+  transition: var(--transition-btn);
+}
+
+.game-submit-btn:hover {
+  transform: var(--transform-btn);
+}
+
+.game-submit-btn img {
+  width: 100%;
 }
 
 /* Game Page CSS ends */
 
+/* Summary Page CSS Starts */
 
+.summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.summary-box {
+  width: 450px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: var(--primary-white);
+  padding: 2rem;
+  border: 4px solid var(--primary-yellow);
+  border-radius: 50px;
+  box-shadow: var(--box-shadow);
+}
+
+.summary-box .summary-heading {
+  width: 150px;
+  /* height: 30px; */
+}
+
+.summary-box .summary-star {
+  width: 250px;
+}
+
+.summary-box .summary-level {
+  font-weight: 900;
+  font-size: 0.9rem;
+  color: #836F9C;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.summary-box .summary-score-box {
+  width: 170px;
+  background: #d9d9d9;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  border-radius: 20px;
+  padding: 15px 0;
+}
+
+.summary-box .summary-score-box h3 {
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  text-align: center;
+  color: var(--primary-blue);
+}
+
+.summary-box .summary-score-subtitle {
+  margin-top: 5px;
+  margin-bottom: 2px;
+  font-weight: 900;
+  font-size: 1.3rem;
+  color: #836F9C;
+  text-transform: uppercase;
+}
+
+.summary-btn button {
+  width: 65px;
+  margin: 10px;
+  /* height: 70px; */
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-btn);
+  background: none;
+}
+
+.summary-btn button:hover {
+  transform: var(--transform-btn);
+}
+
+.summary-btn img {
+  width: 100%;
+}
+/* Summary Page CSS Ends */
 
 /* Tablet Styles Start */
 
