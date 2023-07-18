@@ -409,7 +409,7 @@
 .summary-box .summary-level {
   font-weight: 900;
   font-size: 0.9rem;
-  color: #836F9C;
+  color: var(--primary-purple);
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -428,7 +428,7 @@
   font-size: 2.5rem;
   letter-spacing: 1px;
   text-align: center;
-  color: var(--primary-blue);
+  color: #030303;
 }
 
 .summary-box .summary-score-subtitle {
@@ -436,7 +436,7 @@
   margin-bottom: 2px;
   font-weight: 900;
   font-size: 1.3rem;
-  color: #836F9C;
+  color: var(--primary-purple);
   text-transform: uppercase;
 }
 
