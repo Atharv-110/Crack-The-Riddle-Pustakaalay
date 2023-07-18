@@ -1,5 +1,6 @@
 :root {
-
+  --primary-green: #DDFFE0;
+  --dark-green: #425F57;
   --primary-yellow: #EFDD4B;
   --primary-purple: #AB59FD;
   --primary-white: #FFFEFA;
@@ -201,6 +202,63 @@
 }
 
 /* Level Page CSS Ends */
+
+/* Game Page CSS starts */
+
+.game {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 10px;
+  background: var(--primary-yellow);
+  border-radius: 25px;
+  width: 95%;
+}
+
+.game-pause-btn {
+  /* width: 70px; */
+  height: 60px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: var(--transition-btn);
+}
+
+.game-pause-btn:hover {
+  transform: var(--transform-btn);
+}
+
+.game-pause-btn img {
+  height: 100%;
+}
+
+.game-timer-count {
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-size: 25px;
+  color: #ffffff;
+}
+
+.game-main {
+  margin-top: 2rem;
+  width: 90%;
+  /* height: 90%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* Game Page CSS ends */
 
 
 
